@@ -1,3 +1,5 @@
+
+// container mixi=====================================================================================================
 @mixin container(
   $max-width: 1600px,
   $mobile-padding: 16px,
@@ -23,3 +25,57 @@
 .hero-container {
   @include container(1400px, 20px, 60px, 120px);
 }
+
+// btn mixi=====================================================================================================
+
+@mixin button(
+  $padding: 12px 24px,
+  $bg: #000,
+  $color: #fff,
+  $font: inherit,
+  $radius: 6px
+) {
+  padding: $padding;
+  background-color: $bg;
+  color: $color;
+  font-family: $font;
+  border: none;
+  border-radius: $radius;
+  cursor: pointer;
+  transition: 0.3s ease;
+
+  &:hover {
+    opacity: 0.85;
+    transform: translateY(-1px);
+  }
+}
+
+
+// use it whith cutome parameter
+.btn-primary {
+  @include button(
+    14px 32px,
+    #2563eb,
+    #ffffff,
+    "Inter, sans-serif",
+    10px
+  );
+}
+
+
+
+// display flex mixi=====================================================================================================
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
